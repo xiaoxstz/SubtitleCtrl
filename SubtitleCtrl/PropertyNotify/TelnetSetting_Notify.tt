@@ -1,0 +1,10 @@
+﻿﻿<# 
+var user_obj = new List<Field>(){
+        new Field("Host","string","\"localhost\"","host or ip address"),
+		new Field("Port","int","4212","port"),
+	    new Field("Password","string","\"qq314159\"","password"),
+		}; 
+#>
+<# string classRemark="Telnet setting";#>
+<# string className="TelnetSettingNotify"; #>
+<#@ include file="../TextTemplate/PropNotifyTemplate.txt" #>

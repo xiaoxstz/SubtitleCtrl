@@ -1,0 +1,10 @@
+﻿﻿<# 
+var user_obj = new List<Field>(){
+        new Field("SubEn","int","3","Index of the English subtitle track"),
+		new Field("SubZh","int","2","Index of the Chinese subtitle track"),
+	    new Field("SubNone","int","-1","Index to disable all subtitles"),
+		}; 
+#>
+<# string classRemark="Subtitle track setting";#>
+<# string className="SubTrackSettingNotify"; #>
+<#@ include file="../TextTemplate/PropNotifyTemplate.txt" #>

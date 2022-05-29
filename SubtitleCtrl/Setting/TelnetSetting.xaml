@@ -1,0 +1,29 @@
+﻿<Window x:Class="SubtitleCtrl.Setting.TelnetSetting"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:exwpf="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:local="clr-namespace:SubtitleCtrl.Setting"
+        mc:Ignorable="d"
+        Title="Telnet Setting" Height="140" Width="300" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">Host</Label>
+        <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">Port</Label>
+        <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">Passwd</Label>
+        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Host}"/>
+        <exwpf:IntegerUpDown Grid.Row="1" Grid.Column="1" Text="{Binding Port}"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Password}"/>
+        <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Click="Button_Click">Save</Button>
+    </Grid>
+</Window>

@@ -1,0 +1,50 @@
+﻿<#@ template debug="true" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+using System.ComponentModel;
+
+/// <summary>
+/// <#=classRemark#>
+/// </summary>
+public class <#=className#>:INotifyPropertyChanged
+{
+    public event PropertyChangedEventHandler? PropertyChanged;
+<#  for(int i= 0; i< user_obj.Count; i ++)
+{ #>
+
+	private <#=user_obj[i].Type#> _<#= user_obj[i].Name #> = <#=user_obj[i].DefaultValue#>;
+	///<summary>
+	///<#=user_obj[i].Remark#>
+	///</summary>
+	public <#=user_obj[i].Type#> <#= user_obj[i].Name#>
+	{
+		get{ return _<#=user_obj[i].Name#>;}
+		set
+		{
+            _<#=user_obj[i].Name#> = value;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("<#=user_obj[i].Name#>")); 
+		}
+	}
+<# }#>
+}
+
+<#+
+public struct Field
+{
+    public string Name;
+    public string Type;
+    public string DefaultValue;
+    public string Remark;
+
+    public Field(string _Name,string _Type,string _DefaultValue,string _Remark)
+    {
+        this.Name = _Name;
+        this.Type = _Type;
+        this.DefaultValue = _DefaultValue;
+        this.Remark = _Remark;
+    }
+}
+#>

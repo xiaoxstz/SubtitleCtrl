@@ -1,0 +1,12 @@
+# Custom for this project
+*_Notify.cs
+
+# common
+.vs/
+[Oo]bj/
+[Xx]64/
+[Xx]86/
+[Rr]elease/
+[Dd]ebug/
+*.user
+
